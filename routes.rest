@@ -1,0 +1,85 @@
+### Get all games
+GET http://localhost:3000/games
+
+###
+
+### Create a game
+POST http://localhost:3000/games
+Content-Type: application/json
+
+{
+  "title": "The Elder Scrolls V: Skyrim",
+  "genre": "Role-Playing",
+  "platform": "PC",
+  "releaseYear": 2011,
+  "developer": "Bethesda Game Studios",
+  "rating": 9,
+  "multiplayer": false
+}
+
+###
+
+### Get one game
+GET http://localhost:3000/games/REPLACE_WITH_GAME_ID
+
+###
+
+### Update a game
+PUT http://localhost:3000/games/REPLACE_WITH_GAME_ID
+Content-Type: application/json
+
+{
+  "title": "The Elder Scrolls V: Skyrim",
+  "genre": "Role-Playing",
+  "platform": "PC",
+  "releaseYear": 2011,
+  "developer": "Bethesda Game Studios",
+  "rating": 10,
+  "multiplayer": false
+}
+
+###
+
+### Delete a game
+DELETE http://localhost:3000/games/REPLACE_WITH_GAME_ID
+
+###
+
+### Get all developers
+GET http://localhost:3000/developers
+
+###
+
+### Create a developer
+POST http://localhost:3000/developers
+Content-Type: application/json
+
+{
+  "name": "Bethesda Game Studios",
+  "country": "United States",
+  "foundedYear": 2001,
+  "website": "https://bethesdagamestudios.com"
+}
+
+###
+
+### Get one developer
+GET http://localhost:3000/developers/REPLACE_WITH_DEVELOPER_ID
+
+###
+
+### Update a developer
+PUT http://localhost:3000/developers/REPLACE_WITH_DEVELOPER_ID
+Content-Type: application/json
+
+{
+  "name": "Bethesda Game Studios",
+  "country": "United States",
+  "foundedYear": 2001,
+  "website": "https://bethesdagamestudios.com"
+}
+
+###
+
+### Delete a developer
+DELETE http://localhost:3000/developers/REPLACE_WITH_DEVELOPER_ID
