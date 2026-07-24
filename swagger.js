@@ -6,7 +6,7 @@ const swaggerAutogen = require("swagger-autogen")({
 
 const apiHost = process.env.API_HOST || "localhost:3000";
 
-const apiProtocol = process.env.NODE_ENV === "production" ? "https" : "http";
+const apiProtocol = apiHost.includes("onrender.com") ? "https" : "http";
 
 const doc = {
   info: {
@@ -19,10 +19,9 @@ const doc = {
   servers: [
     {
       url: `${apiProtocol}://${apiHost}`,
-      description:
-        process.env.NODE_ENV === "production"
-          ? "Render production server"
-          : "Local development server",
+      description: apiHost.includes("onrender.com")
+        ? "Render production server"
+        : "Local development server",
     },
   ],
 
@@ -56,11 +55,6 @@ const doc = {
 
 const outputFile = "./swagger-output.json";
 
-const endpointsFiles = [
-  "./routes/index.js",
-  "./routes/auth.js",
-  "./routes/games.js",
-  "./routes/developers.js",
-];
+const endpointsFiles = ["./routes/index.js"];
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
