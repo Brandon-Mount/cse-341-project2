@@ -1,11 +1,17 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.status(200).send("Game Library API");
+  //#swagger.tags = ["Home"]
+
+  res.status(200).json({
+    message: "Welcome to the Game Library API",
+    loggedIn: req.isAuthenticated(),
+  });
 });
 
-router.use("/", require("./swagger.js"));
-router.use("/games", require("./games.js"));
-router.use("/developers", require("./developers.js"));
+router.use("/", require("./swagger"));
+router.use("/auth", require("./auth"));
+router.use("/games", require("./games"));
+router.use("/developers", require("./developers"));
 
 module.exports = router;
